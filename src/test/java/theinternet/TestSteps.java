@@ -35,7 +35,6 @@ public class TestSteps {
 
         if (driver == null) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
             driver = new ChromeDriver(options);
         }
 
