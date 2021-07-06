@@ -1,0 +1,431 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-06T22:45:06.411Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2545000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.setUp()"
+            }
+          }
+        ],
+        "line": 3,
+        "name": "A valid email id is allowed",
+        "description": "",
+        "id": "forgot-password;a-valid-email-id-is-allowed",
+        "after": [
+          {
+            "result": {
+              "duration": 1151000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 962000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Navigate to Page ForgotPassword",
+            "match": {
+              "location": "stepdefinitions.TestSteps.navigateToPageForgotPassword()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 115000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "A User enters a valid email id",
+            "match": {
+              "location": "stepdefinitions.TestSteps.aUserEntersAValidEmailId()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 231000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "A User clicks on Retrieve password button",
+            "match": {
+              "location": "stepdefinitions.TestSteps.aUserClicksOnRetrievePasswordButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#content\"}\n  (Session info: chrome\u003d91.0.4472.124)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027STL22NGP082523\u0027, ip: \u0027192.168.0.3\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_291\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\\Users\\ngp0619\\AppData\\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:58358}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: d9486893a05d0834864ebc7f8bc0b673\n*** Element info: {Using\u003did, value\u003dcontent}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat stepdefinitions.TestSteps.applicationShowsThatTheEmailHasBeenSent(TestSteps.java:73)\r\n\tat ✽.Application shows that the email has been sent.(file:///C:/Users/ngp0619/IdeaProjects/gradle_selenium/src/test/resources/features/forgotpassword.feature:7)\r\n",
+              "duration": 5080000000,
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "Application shows that the email has been sent.",
+            "match": {
+              "location": "stepdefinitions.TestSteps.applicationShowsThatTheEmailHasBeenSent()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-06T22:45:16.573Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1934000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.setUp()"
+            }
+          }
+        ],
+        "line": 9,
+        "name": "An invalid email is not allowed",
+        "description": "",
+        "id": "forgot-password;an-invalid-email-is-not-allowed",
+        "after": [
+          {
+            "result": {
+              "duration": 1049000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 967000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Navigate to Page ForgotPassword",
+            "match": {
+              "location": "stepdefinitions.TestSteps.navigateToPageForgotPassword()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 102000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "A User enters a invalid email id",
+            "match": {
+              "location": "stepdefinitions.TestSteps.aUserEntersAInvalidEmailId()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 315000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "A User clicks on Retrieve password button",
+            "match": {
+              "location": "stepdefinitions.TestSteps.aUserClicksOnRetrievePasswordButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#content\"}\n  (Session info: chrome\u003d91.0.4472.124)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027STL22NGP082523\u0027, ip: \u0027192.168.0.3\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_291\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\\Users\\ngp0619\\AppData\\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:50985}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: bb82a31efecaa9cde503eef2670c5668\n*** Element info: {Using\u003did, value\u003dcontent}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat stepdefinitions.TestSteps.applicationDoesNotShowThatEmailHasBeenSent(TestSteps.java:79)\r\n\tat ✽.Application does not show that email has been sent.(file:///C:/Users/ngp0619/IdeaProjects/gradle_selenium/src/test/resources/features/forgotpassword.feature:13)\r\n",
+              "duration": 5047000000,
+              "status": "failed"
+            },
+            "line": 13,
+            "name": "Application does not show that email has been sent.",
+            "match": {
+              "location": "stepdefinitions.TestSteps.applicationDoesNotShowThatEmailHasBeenSent()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Forgot password",
+    "description": "",
+    "id": "forgot-password",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/forgotpassword.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-06T22:45:26.023Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1922000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.setUp()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Check the status HTTP status codes",
+        "description": "",
+        "id": "http-status-codes;check-the-status-http-status-codes;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1212000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 953000000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "A User Navigates to StatusCodes Page",
+            "match": {
+              "location": "stepdefinitions.TestSteps.aUserNavigatesToStatusCodesPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 246000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "A User Clicks on status Code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 29
+                }
+              ],
+              "location": "stepdefinitions.TestSteps.aUserClicksOnStatusCodeInput(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 47000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Application displays the message 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 33
+                }
+              ],
+              "location": "stepdefinitions.TestSteps.applicationDisplaysTheMessageOutputCode(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-06T22:45:30.423Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1891000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.setUp()"
+            }
+          }
+        ],
+        "line": 9,
+        "name": "Check the status HTTP status codes",
+        "description": "",
+        "id": "http-status-codes;check-the-status-http-status-codes;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 1209000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1414000000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "A User Navigates to StatusCodes Page",
+            "match": {
+              "location": "stepdefinitions.TestSteps.aUserNavigatesToStatusCodesPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 210000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "A User Clicks on status Code 301",
+            "match": {
+              "arguments": [
+                {
+                  "val": "301",
+                  "offset": 29
+                }
+              ],
+              "location": "stepdefinitions.TestSteps.aUserClicksOnStatusCodeInput(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 43000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Application displays the message 301",
+            "match": {
+              "arguments": [
+                {
+                  "val": "301",
+                  "offset": 33
+                }
+              ],
+              "location": "stepdefinitions.TestSteps.applicationDisplaysTheMessageOutputCode(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-06T22:45:35.196Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1895000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.setUp()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Check the status HTTP status codes",
+        "description": "",
+        "id": "http-status-codes;check-the-status-http-status-codes;;4",
+        "after": [
+          {
+            "result": {
+              "duration": 1188000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinitions.TestSteps.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1372000000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "A User Navigates to StatusCodes Page",
+            "match": {
+              "location": "stepdefinitions.TestSteps.aUserNavigatesToStatusCodesPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 209000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "A User Clicks on status Code 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 29
+                }
+              ],
+              "location": "stepdefinitions.TestSteps.aUserClicksOnStatusCodeInput(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Application displays the message 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 33
+                }
+              ],
+              "location": "stepdefinitions.TestSteps.applicationDisplaysTheMessageOutputCode(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "HTTP status codes",
+    "description": "",
+    "id": "http-status-codes",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/statusCodes.feature",
+    "tags": []
+  }
+]
