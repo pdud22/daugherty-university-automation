@@ -12,5 +12,5 @@ import io.cucumber.junit.CucumberOptions;
         },
         features = {"src/test/resources"}
 )
-public class RunTests {
+public class MainRunner {
 }

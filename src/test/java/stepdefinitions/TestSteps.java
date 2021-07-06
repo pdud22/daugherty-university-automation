@@ -23,8 +23,6 @@ public class TestSteps {
 
     @Before
     public void setUp() {
-
-        // ChromeDriver path on development machine, which is Windows
         String OS = System.getProperty("os.name");
         if (OS.startsWith("Windows")) {
             System.setProperty("webdriver.chrome.driver",
@@ -70,7 +68,7 @@ public class TestSteps {
         driver.findElement(By.partialLinkText(inputCode.toString())).click();
     }
 
-    @Then("Application displays the message {int}")
+    @Then("The application displays the message {int}")
     public void applicationDisplaysTheMessageOutputCode(Integer outputCode) {
         String expectedMessage = "This page returned a " + outputCode.toString() + " status code.";
         String actualMessage = driver.findElement(By.cssSelector("h3 + p")).getText();
