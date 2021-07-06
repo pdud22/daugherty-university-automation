@@ -1,4 +1,3 @@
-@statuscodes
 Feature: HTTP status codes
   Scenario Outline: Check the status HTTP status codes
     Given A User Navigates to StatusCodes Page

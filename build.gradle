@@ -16,11 +16,32 @@ dependencies {
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java',
             version: '3.141.59'
-    compile group: 'io.cucumber', name: 'cucumber-java', version: '5.6.0'
-    testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '5.6.0'
+    compile group: 'io.cucumber', name: 'cucumber-java', version: '6.10.4'
+    testImplementation 'io.cucumber:cucumber-junit:6.10.4'
 
     testCompile group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
 
     compile group: 'io.github.prashant-ramcharan', name: 'courgette-jvm', version: '4.6.2'
 
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+task cucumberCli() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:target/cucumber-report.html',
+                    '--glue', 'com.baeldung.cucumber',
+                    'src/test/resources']
+        }
+    }
 }

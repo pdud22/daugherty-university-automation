@@ -1,4 +1,3 @@
-@forgotpassword
 Feature: Forgot password
 
   Scenario: A valid email id is allowed
