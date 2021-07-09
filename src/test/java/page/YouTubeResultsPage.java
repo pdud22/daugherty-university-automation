@@ -15,7 +15,7 @@ public class YouTubeResultsPage {
     @FindBy(css = ".style-scope.ytd-search-filter-group-renderer")
     public List<WebElement> filterOptions;
 
-    @FindBy(css = ".style-scope.ytd-thumbnail-overlay-time-status-renderer")
+    @FindBy(css = "#text.style-scope.ytd-thumbnail-overlay-time-status-renderer")
     public List<WebElement> videoTimeDurations;
 
     public YouTubeResultsPage(WebDriver webDriver) {
