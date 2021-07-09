@@ -3,7 +3,6 @@ package stepdefinitions;
 import drivermanagement.WebDriverManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,10 +36,10 @@ public class YouTubeResultsPageStepDefinitions {
         filterOption.click();
     }
 
-    @Then("I will see only videos between {int} minutes and {int} minutes long")
-    public void onlyVideosBetweenDurationsAreDisplayed(int arg1, int arg2) {
-        webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("#text.style-scope.ytd-thumbnail-overlay-time-status-renderer")));
-        for (WebElement videoTimeDuration : youTubeResultsPage.getVideoTimeDurations()) {
+    @Then("I will see only videos uploaded in the past {}")
+    public void onlyVideosShownInTimeSpan(String timeSpan) {
+        for (WebElement videoTimeDuration : youTubeResultsPage.videoMetaData) {
+            // This is a generic and not valuable assertion -- we'd want to build upon it to assert on date and time
             assertThat(videoTimeDuration.getAttribute("innerHTML"), is(notNullValue()));
         }
     }

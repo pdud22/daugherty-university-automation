@@ -1,6 +1,5 @@
 package page;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,14 +15,10 @@ public class YouTubeResultsPage {
     @FindBy(css = ".style-scope.ytd-search-filter-group-renderer")
     public List<WebElement> filterOptions;
 
-    private final WebDriver webDriver;
+    @FindBy(css = "#metadata.style-scope.ytd-video-meta-block")
+    public List<WebElement> videoMetaData;
 
     public YouTubeResultsPage(WebDriver webDriver) {
-        this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
-    }
-
-    public List<WebElement> getVideoTimeDurations() {
-        return webDriver.findElements(By.cssSelector("#text.style-scope.ytd-thumbnail-overlay-time-status-renderer"));
     }
 }
