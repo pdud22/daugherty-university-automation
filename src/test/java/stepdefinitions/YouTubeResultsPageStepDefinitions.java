@@ -30,8 +30,10 @@ public class YouTubeResultsPageStepDefinitions {
         filterOption.click();
     }
 
-    @Then("I will see only videos between {} minutes and {} minutes long")
-    public void onlyVideosBetweenDurationsAreDisplayed(Integer startDuration, Integer endDuration) {
+    @Then("I will see only videos between {int} minutes and {int} minutes long")
+    public void onlyVideosBetweenDurationsAreDisplayed(int arg1, int arg2) {
+        int hello = arg1;
+        int bye = arg2;
         for (WebElement videoTimeDuration : youTubeResultsPage.videoTimeDurations) {
             assertThat(videoTimeDuration.getText(), is(notNullValue()));
         }

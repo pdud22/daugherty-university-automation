@@ -7,8 +7,8 @@ Feature: YouTube filter
     Then I will see only videos between <start> minutes and <end> minutes long
 
     Examples:
-      | searchInput | timeDurationFilter  | start | end
-      | Mozart      | Less than 4 minutes | 0     | 4
-      | Mozart      | 4 - 20 minutes      | 4     | 20
-      | Mozart      | Over 20 minutes     | 20    | 100000
+      | searchInput | timeDurationFilter | start | end      |
+      | Mozart      | Under 4 minutes    | 0     | 4        |
+      | Mozart      | 4 - 20 minutes     | 4     | 20       |
+      | Mozart      | Over 20 minutes    | 20    | 10000000 |
 
