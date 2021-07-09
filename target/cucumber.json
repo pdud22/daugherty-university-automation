@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-07-09T20:59:23.222Z",
+        "start_timestamp": "2021-07-09T22:17:17.299Z",
         "line": 8,
         "name": "Check the status HTTP status codes",
         "description": "",
@@ -11,7 +11,7 @@
         "after": [
           {
             "result": {
-              "duration": 1580000000,
+              "duration": 1061000000,
               "status": "passed"
             },
             "match": {
@@ -24,7 +24,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6795000000,
+              "duration": 3494000000,
               "status": "passed"
             },
             "line": 3,
@@ -36,7 +36,7 @@
           },
           {
             "result": {
-              "duration": 329000000,
+              "duration": 197000000,
               "status": "passed"
             },
             "line": 4,
@@ -54,7 +54,7 @@
           },
           {
             "result": {
-              "duration": 29000000,
+              "duration": 34000000,
               "status": "passed"
             },
             "line": 5,
@@ -73,7 +73,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-07-09T20:59:32.120Z",
+        "start_timestamp": "2021-07-09T22:17:22.137Z",
         "line": 9,
         "name": "Check the status HTTP status codes",
         "description": "",
@@ -81,7 +81,7 @@
         "after": [
           {
             "result": {
-              "duration": 1828000000,
+              "duration": 1038000000,
               "status": "passed"
             },
             "match": {
@@ -94,7 +94,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4872000000,
+              "duration": 2737000000,
               "status": "passed"
             },
             "line": 3,
@@ -106,7 +106,7 @@
           },
           {
             "result": {
-              "duration": 327000000,
+              "duration": 205000000,
               "status": "passed"
             },
             "line": 4,
@@ -124,7 +124,7 @@
           },
           {
             "result": {
-              "duration": 49000000,
+              "duration": 27000000,
               "status": "passed"
             },
             "line": 5,
@@ -143,7 +143,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-07-09T20:59:39.216Z",
+        "start_timestamp": "2021-07-09T22:17:26.154Z",
         "line": 10,
         "name": "Check the status HTTP status codes",
         "description": "",
@@ -151,7 +151,7 @@
         "after": [
           {
             "result": {
-              "duration": 1881000000,
+              "duration": 1226000000,
               "status": "passed"
             },
             "match": {
@@ -164,7 +164,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4885000000,
+              "duration": 3342000000,
               "status": "passed"
             },
             "line": 3,
@@ -176,7 +176,7 @@
           },
           {
             "result": {
-              "duration": 328000000,
+              "duration": 240000000,
               "status": "passed"
             },
             "line": 4,
@@ -194,7 +194,7 @@
           },
           {
             "result": {
-              "duration": 53000000,
+              "duration": 32000000,
               "status": "passed"
             },
             "line": 5,
@@ -224,7 +224,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-07-09T20:59:46.390Z",
+        "start_timestamp": "2021-07-09T22:17:31.011Z",
         "line": 11,
         "name": "Filter by Upload Date",
         "description": "",
@@ -232,7 +232,7 @@
         "after": [
           {
             "result": {
-              "duration": 2389000000,
+              "duration": 4792000000,
               "status": "passed"
             },
             "match": {
@@ -245,7 +245,7 @@
         "steps": [
           {
             "result": {
-              "duration": 9202000000,
+              "duration": 4988000000,
               "status": "passed"
             },
             "line": 4,
@@ -257,7 +257,7 @@
           },
           {
             "result": {
-              "duration": 1126000000,
+              "duration": 1017000000,
               "status": "passed"
             },
             "line": 5,
@@ -275,15 +275,15 @@
           },
           {
             "result": {
-              "duration": 4024000000,
+              "duration": 2354000000,
               "status": "passed"
             },
             "line": 6,
-            "name": "I click the Under 4 minutes filter",
+            "name": "I click the Last hour filter",
             "match": {
               "arguments": [
                 {
-                  "val": "Under 4 minutes",
+                  "val": "Last hour",
                   "offset": 12
                 }
               ],
@@ -293,30 +293,26 @@
           },
           {
             "result": {
-              "duration": 2097000000,
+              "duration": 1313000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "I will see only videos between 0 minutes and 4 minutes long",
+            "name": "I will see only videos uploaded in the past Hour",
             "match": {
               "arguments": [
                 {
-                  "val": "0",
-                  "offset": 31
-                },
-                {
-                  "val": "4",
-                  "offset": 45
+                  "val": "Hour",
+                  "offset": 44
                 }
               ],
-              "location": "stepdefinitions.YouTubeResultsPageStepDefinitions.onlyVideosBetweenDurationsAreDisplayed(int,int)"
+              "location": "stepdefinitions.YouTubeResultsPageStepDefinitions.onlyVideosShownInTimeSpan(java.lang.String)"
             },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2021-07-09T21:00:05.265Z",
+        "start_timestamp": "2021-07-09T22:17:45.494Z",
         "line": 12,
         "name": "Filter by Upload Date",
         "description": "",
@@ -324,7 +320,7 @@
         "after": [
           {
             "result": {
-              "duration": 2687000000,
+              "duration": 1409000000,
               "status": "passed"
             },
             "match": {
@@ -337,7 +333,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7959000000,
+              "duration": 4625000000,
               "status": "passed"
             },
             "line": 4,
@@ -349,7 +345,7 @@
           },
           {
             "result": {
-              "duration": 781000000,
+              "duration": 944000000,
               "status": "passed"
             },
             "line": 5,
@@ -367,15 +363,15 @@
           },
           {
             "result": {
-              "duration": 3957000000,
+              "duration": 2505000000,
               "status": "passed"
             },
             "line": 6,
-            "name": "I click the 4 - 20 minutes filter",
+            "name": "I click the Today filter",
             "match": {
               "arguments": [
                 {
-                  "val": "4 - 20 minutes",
+                  "val": "Today",
                   "offset": 12
                 }
               ],
@@ -385,30 +381,26 @@
           },
           {
             "result": {
-              "duration": 1818000000,
+              "duration": 1294000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "I will see only videos between 4 minutes and 20 minutes long",
+            "name": "I will see only videos uploaded in the past Day",
             "match": {
               "arguments": [
                 {
-                  "val": "4",
-                  "offset": 31
-                },
-                {
-                  "val": "20",
-                  "offset": 45
+                  "val": "Day",
+                  "offset": 44
                 }
               ],
-              "location": "stepdefinitions.YouTubeResultsPageStepDefinitions.onlyVideosBetweenDurationsAreDisplayed(int,int)"
+              "location": "stepdefinitions.YouTubeResultsPageStepDefinitions.onlyVideosShownInTimeSpan(java.lang.String)"
             },
             "keyword": "Then "
           }
         ]
       },
       {
-        "start_timestamp": "2021-07-09T21:00:22.488Z",
+        "start_timestamp": "2021-07-09T22:17:56.281Z",
         "line": 13,
         "name": "Filter by Upload Date",
         "description": "",
@@ -416,7 +408,7 @@
         "after": [
           {
             "result": {
-              "duration": 2414000000,
+              "duration": 4821000000,
               "status": "passed"
             },
             "match": {
@@ -429,7 +421,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8059000000,
+              "duration": 5294000000,
               "status": "passed"
             },
             "line": 4,
@@ -441,7 +433,7 @@
           },
           {
             "result": {
-              "duration": 1264000000,
+              "duration": 986000000,
               "status": "passed"
             },
             "line": 5,
@@ -459,15 +451,15 @@
           },
           {
             "result": {
-              "duration": 3456000000,
+              "duration": 2452000000,
               "status": "passed"
             },
             "line": 6,
-            "name": "I click the Over 20 minutes filter",
+            "name": "I click the This week filter",
             "match": {
               "arguments": [
                 {
-                  "val": "Over 20 minutes",
+                  "val": "This week",
                   "offset": 12
                 }
               ],
@@ -477,23 +469,19 @@
           },
           {
             "result": {
-              "duration": 825000000,
+              "duration": 1068000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "I will see only videos between 20 minutes and 10000000 minutes long",
+            "name": "I will see only videos uploaded in the past Week",
             "match": {
               "arguments": [
                 {
-                  "val": "20",
-                  "offset": 31
-                },
-                {
-                  "val": "10000000",
-                  "offset": 46
+                  "val": "Week",
+                  "offset": 44
                 }
               ],
-              "location": "stepdefinitions.YouTubeResultsPageStepDefinitions.onlyVideosBetweenDurationsAreDisplayed(int,int)"
+              "location": "stepdefinitions.YouTubeResultsPageStepDefinitions.onlyVideosShownInTimeSpan(java.lang.String)"
             },
             "keyword": "Then "
           }
