@@ -1,10 +1,11 @@
 package stepdefinitions;
 
+import drivermanagement.WebDriverManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.YouTubeResultsPage;
@@ -38,7 +39,8 @@ public class YouTubeResultsPageStepDefinitions {
 
     @Then("I will see only videos between {int} minutes and {int} minutes long")
     public void onlyVideosBetweenDurationsAreDisplayed(int arg1, int arg2) {
-        for (WebElement videoTimeDuration : youTubeResultsPage.videoTimeDurations) {
+        webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("#text.style-scope.ytd-thumbnail-overlay-time-status-renderer")));
+        for (WebElement videoTimeDuration : youTubeResultsPage.getVideoTimeDurations()) {
             assertThat(videoTimeDuration.getAttribute("innerHTML"), is(notNullValue()));
         }
     }

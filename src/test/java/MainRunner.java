@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
                 "html:target/cucumber-report.html",
                 "json:target/cucumber.json"
         },
-        features = {"src/test/resources/features/youtubesearch.feature"}
+        features = {"src/test/resources/features/"}
 )
 public class MainRunner {
 }
