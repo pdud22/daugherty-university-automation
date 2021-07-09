@@ -13,10 +13,9 @@ public class YouTubeHomePage {
     @FindBy(id = "search-icon-legacy")
     public WebElement searchButton;
 
-    public WebDriver webDriver;
-
     public YouTubeHomePage(WebDriver webDriver) {
-        this.webDriver = webDriver;
-        PageFactory.initElements(webDriver, YouTubeHomePage.class);
+        PageFactory.initElements(webDriver, this);
     }
+
+
 }

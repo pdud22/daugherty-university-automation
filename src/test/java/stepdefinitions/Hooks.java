@@ -2,75 +2,57 @@ package stepdefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.nio.file.Paths;
-import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class TestSteps {
-    private WebDriver driver;
+public class Hooks {
+    private TestContext testContext;
 
-    @Before
-    public void setUp() {
-        String OS = System.getProperty("os.name");
-        if (OS.startsWith("Windows")) {
-            System.setProperty("webdriver.chrome.driver",
-                    Paths.get("src/test/resources/chromedriver_win32/chromedriver.exe").toString());
-
-        }
-
-        if (driver == null) {
-            ChromeOptions options = new ChromeOptions();
-            driver = new ChromeDriver(options);
-        }
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    public Hooks(TestContext testContext) {
+        this.testContext = testContext;
     }
 
     @After
     public void tearDown() {
-        if (driver != null) {
-            driver.close();
-            driver.quit();
+        if (testContext.getWebDriver() != null) {
+            testContext.getWebDriver().close();
+            testContext.getWebDriver().quit();
         }
     }
 
     @Then("Application shows that the email has been sent.")
     public void applicationShowsThatTheEmailHasBeenSent() {
-        String actualMessage = driver.findElement(By.id("content")).getText();
+        String actualMessage = testContext.getWebDriver().findElement(By.id("content")).getText();
         assertThat(actualMessage.trim(), is("Your e-mail's been sent!"));
     }
 
     @Then("Application does not show that email has been sent.")
     public void applicationDoesNotShowThatEmailHasBeenSent() {
-        String actualMessage = driver.findElement(By.id("content")).getText();
+        String actualMessage = testContext.getWebDriver().findElement(By.id("content")).getText();
         assertThat(actualMessage.trim(), not("Your e-mail's been sent!"));
     }
 
     @Given("I have navigated to the status codes page")
     public void aUserNavigatesToStatusCodesPage() {
-        driver.navigate().to("https://the-internet.herokuapp.com/status_codes");
+        testContext.getWebDriver().navigate().to("https://the-internet.herokuapp.com/status_codes");
     }
 
     @When("I click on a status code of {int}")
     public void aUserClicksOnStatusCodeInput(Integer inputCode) {
-        driver.findElement(By.partialLinkText(inputCode.toString())).click();
+        testContext.getWebDriver().findElement(By.partialLinkText(inputCode.toString())).click();
     }
 
     @Then("The application displays the message {int}")
     public void applicationDisplaysTheMessageOutputCode(Integer outputCode) {
         String expectedMessage = "This page returned a " + outputCode.toString() + " status code.";
-        String actualMessage = driver.findElement(By.cssSelector("h3 + p")).getText();
+        String actualMessage = testContext.getWebDriver().findElement(By.cssSelector("h3 + p")).getText();
 
         assertThat(actualMessage, containsString(expectedMessage));
     }
