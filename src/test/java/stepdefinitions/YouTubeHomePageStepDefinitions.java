@@ -10,10 +10,9 @@ public class YouTubeHomePageStepDefinitions {
     private final YouTubeHomePage youTubeHomePage;
     private final WebDriver webDriver;
 
-    public YouTubeHomePageStepDefinitions(TestContext testContext) {
-        this.webDriver = testContext.getWebDriver();
-        this.youTubeHomePage = new YouTubeHomePage(testContext.getWebDriver());
-        System.out.println("oh hi");
+    public YouTubeHomePageStepDefinitions(WebDriverManager webDriverManager) {
+        this.webDriver = webDriverManager.getWebDriver();
+        this.youTubeHomePage = new YouTubeHomePage(webDriverManager.getWebDriver());
     }
 
     @Given("I have navigated to YouTube")

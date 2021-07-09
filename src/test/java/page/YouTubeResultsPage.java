@@ -9,7 +9,7 @@ import java.util.List;
 
 public class YouTubeResultsPage {
 
-    @FindBy(css = "style-scope ytd-toggle-button-renderer style-text")
+    @FindBy(css = "#button.style-scope.ytd-toggle-button-renderer.style-text")
     public WebElement filterButton;
 
     @FindBy(css = "style-scope ytd-search-filter-group-renderer")
@@ -18,10 +18,7 @@ public class YouTubeResultsPage {
     @FindBy(css = "style-scope ytd-thumbnail-overlay-time-status-renderer")
     public List<WebElement> videoTimeDurations;
 
-    public WebDriver webDriver;
-
     public YouTubeResultsPage(WebDriver webDriver) {
-        this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
 }

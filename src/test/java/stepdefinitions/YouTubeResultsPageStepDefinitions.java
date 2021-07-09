@@ -16,12 +16,13 @@ public class YouTubeResultsPageStepDefinitions {
 
     private final YouTubeResultsPage youTubeResultsPage;
 
-    public YouTubeResultsPageStepDefinitions(YouTubeResultsPage youTubeResultsPage) {
-        this.youTubeResultsPage = youTubeResultsPage;
+    public YouTubeResultsPageStepDefinitions(WebDriverManager webDriverManager) {
+        this.youTubeResultsPage = new YouTubeResultsPage(webDriverManager.getWebDriver());
     }
 
     @When("I click the {} filter")
     public void iClickTheUploadFilterTypeFilter(String uploadFilterType) {
+        youTubeResultsPage.filterButton.click();
         WebElement filterOption = youTubeResultsPage.filterOptions.stream()
                 .filter(webElement -> Objects.equals(webElement.getText(), uploadFilterType))
                 .findFirst()

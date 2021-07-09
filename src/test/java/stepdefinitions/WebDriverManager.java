@@ -6,11 +6,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.nio.file.Paths;
 
-public class TestContext {
+public class WebDriverManager {
 
     private final WebDriver webDriver;
 
-    public TestContext() {
+    public WebDriverManager() {
         String OS = System.getProperty("os.name");
         if (OS.startsWith("Windows")) {
             System.setProperty("webdriver.chrome.driver", Paths.get("src/test/resources/chromedriver_win32/chromedriver.exe").toString());
