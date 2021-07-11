@@ -17,7 +17,7 @@ public class YouTubeHomePageStepDefinitions {
     }
 
     @Given("I have navigated to YouTube")
-    public void aUserNavigatesToStatusCodesPage() {
+    public void navigateToYouTube() {
         webDriver.navigate().to("https://www.youtube.com");
     }
 
