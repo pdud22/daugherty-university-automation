@@ -4,14 +4,15 @@ import drivermanagement.WebDriverManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import page.YouTubeHomePage;
 
-public class YouTubeHomePageStepDefinitions {
+public class YouTubeHomePageSteps {
 
     private final YouTubeHomePage youTubeHomePage;
     private final WebDriver webDriver;
 
-    public YouTubeHomePageStepDefinitions(WebDriverManager webDriverManager) {
+    public YouTubeHomePageSteps(WebDriverManager webDriverManager) {
         this.webDriver = webDriverManager.getWebDriver();
         this.youTubeHomePage = new YouTubeHomePage(webDriverManager.getWebDriver());
     }
@@ -21,7 +22,7 @@ public class YouTubeHomePageStepDefinitions {
         webDriver.navigate().to("https://www.youtube.com");
     }
 
-    @And("I have searched for {}")
+    @And("I have searched for {} in the YouTube search bar")
     public void searchWithInput(String searchInput) {
         youTubeHomePage.searchInput.sendKeys("Mozart");
         youTubeHomePage.searchButton.click();

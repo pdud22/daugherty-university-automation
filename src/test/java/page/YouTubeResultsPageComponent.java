@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class YouTubeResultsPage {
+public class YouTubeResultsPageComponent {
 
     @FindBy(css = "#button.style-scope.ytd-toggle-button-renderer.style-text")
     public WebElement filterButton;
@@ -18,7 +18,7 @@ public class YouTubeResultsPage {
     @FindBy(css = "#metadata.style-scope.ytd-video-meta-block")
     public List<WebElement> videoMetaData;
 
-    public YouTubeResultsPage(WebDriver webDriver) {
+    public YouTubeResultsPageComponent(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }
 }
