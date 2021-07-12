@@ -9,22 +9,22 @@ import page.IMDBHomePage;
 
 public class IMDBHomePageSteps {
 
-    private final IMDBHomePage IMDBHomePage;
+    private final IMDBHomePage imdbHomePage;
     private final WebDriver webDriver;
 
     public IMDBHomePageSteps(WebDriverManager webDriverManager) {
         this.webDriver = webDriverManager.getWebDriver();
-        this.IMDBHomePage = new IMDBHomePage(webDriverManager.getWebDriver());
+        this.imdbHomePage = new IMDBHomePage(webDriverManager.getWebDriver());
     }
 
-    @Given("I have navigated to Rotten Tomatoes")
+    @Given("I have navigated to IMDB")
     public void navigateToYouTube() {
         webDriver.navigate().to("https://www.imdb.com");
     }
 
-    @When("I have searched for {} in the Rotten Tomatoes search bar")
+    @When("I have searched for {} in the IMDB search bar")
     public void searchWithInput(String searchInput) {
-        IMDBHomePage.searchInput.sendKeys("Batman");
-        IMDBHomePage.searchInput.sendKeys(Keys.ENTER);
+        imdbHomePage.searchInput.sendKeys("Batman");
+        imdbHomePage.searchInput.sendKeys(Keys.ENTER);
     }
 }

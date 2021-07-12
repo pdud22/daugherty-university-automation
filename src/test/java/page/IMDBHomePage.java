@@ -15,6 +15,9 @@ public class IMDBHomePage {
     @FindBy(css = "#button.js-click-for-more-btn")
     public List<WebElement> moreButtons;
 
+    @FindBy(css = "[class^='.searchResults__ResultTextContainer'")
+    public List<WebElement> dropdownResults;
+
     public IMDBHomePage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }

@@ -3,6 +3,7 @@ package stepdefinitions;
 
 import drivermanagement.WebDriverManager;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,9 +27,7 @@ public class IMDBResultsPageComponentSteps {
 
     @Then("I will see movies with titles that include Batman")
     public void moviesHaveCorrectTitles() {
-        webDriverWait.until(ExpectedConditions.visibilityOfAllElements(imdbResultsPage.results));
-        List<WebElement> movieTitles = imdbResultsPage.results.subList(0, 1);
-        for (WebElement movieTitle : movieTitles) {
+        for (WebElement movieTitle : imdbResultsPage.getMovieTitles()) {
             assertThat(movieTitle.getText(), containsString("Batman"));
         }
     }
