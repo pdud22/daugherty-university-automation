@@ -24,7 +24,7 @@ public class IMDBHomePageSteps {
 
     @When("I have searched for {} in the IMDB search bar")
     public void searchWithInput(String searchInput) {
-        imdbHomePage.searchInput.sendKeys("Batman");
+        imdbHomePage.searchInput.sendKeys(searchInput);
         imdbHomePage.searchInput.sendKeys(Keys.ENTER);
     }
 }

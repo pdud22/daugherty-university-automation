@@ -23,10 +23,10 @@ public class IMDBResultsPageComponentSteps {
         this.imdbResultsPage = new IMDBResultsPage(webDriverManager.getWebDriver());
     }
 
-    @Then("I will see movies with titles that include Batman")
-    public void moviesHaveCorrectTitles() {
+    @Then("I will see movies with titles that include {}")
+    public void moviesHaveCorrectTitles(String resultingMovieTitle) {
         for (WebElement movieTitle : imdbResultsPage.getMovieTitles()) {
-            assertThat(movieTitle.getText(), containsString("Batman"));
+            assertThat(movieTitle.getText(), containsString(resultingMovieTitle));
         }
     }
 }
