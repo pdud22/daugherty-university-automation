@@ -11,19 +11,22 @@ import java.util.List;
 public class IMDBResultsPage {
 
     @FindBy(css = ".findSection")
-    public List<WebElement> foundSections;
+    public List<WebElement> sections;
 
     @FindBy(css = ".title-section")
     public WebElement title;
 
     @FindBy(css= ".findSectionHeader")
-    public List<WebElement> foundSectionHeaders;
+    public List<WebElement> sectionHeaders;
+
+    @FindBy(css = ".findHeader")
+    public WebElement header;
 
     public IMDBResultsPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);
     }
 
     public List<WebElement> getMovieTitles() {
-        return foundSections.get(0).findElements(By.className("result_text"));
+        return sections.get(0).findElements(By.className("result_text"));
     }
 }

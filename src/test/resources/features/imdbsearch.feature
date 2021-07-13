@@ -11,6 +11,16 @@ Feature: IMDB search
       | Batman      | Batman           |
       | Iron Man 3  | Iron Man 3       |
 
+  Scenario Outline: Search for movie that does not exist
+    Given I have navigated to IMDB
+    When I have searched for <searchInput> in the IMDB search bar
+    Then I will see that no results were found for <searchInput>
+
+    Examples:
+      | searchInput         |
+      | asdlkfhwelkrjhlkewa |
+
+
   Scenario Outline: Search for one movie's details
     Given I have navigated to IMDB
     When I have searched for <searchInput> in the IMDB search bar
