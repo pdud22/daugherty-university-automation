@@ -16,6 +16,8 @@ public class IMDBResultsPage {
     @FindBy(css = ".title-section")
     public WebElement title;
 
+    @FindBy(css= ".findSectionHeader")
+    public List<WebElement> foundSectionHeaders;
 
     public IMDBResultsPage(WebDriver webDriver) {
         PageFactory.initElements(webDriver, this);

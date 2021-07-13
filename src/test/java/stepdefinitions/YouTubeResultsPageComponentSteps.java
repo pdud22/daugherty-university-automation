@@ -43,4 +43,6 @@ public class YouTubeResultsPageComponentSteps {
             assertThat(videoTimeDuration.getAttribute("innerHTML"), is(notNullValue()));
         }
     }
+
+
 }

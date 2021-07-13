@@ -2,6 +2,7 @@ package stepdefinitions;
 
 
 import drivermanagement.WebDriverManager;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +12,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import page.IMDBResultsPage;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.containsString;
 
 public class IMDBResultsPageComponentSteps {
@@ -28,5 +31,14 @@ public class IMDBResultsPageComponentSteps {
         for (WebElement movieTitle : imdbResultsPage.getMovieTitles()) {
             assertThat(movieTitle.getText(), containsString(resultingMovieTitle));
         }
+    }
+
+    @And("I will see sections for titles, names, keywords, and companies")
+    public void iWillSeeSectionsForTitlesNamesKeywordsAndCompanies() {
+        List<String> sectionHeaders = imdbResultsPage.foundSectionHeaders
+                .stream()
+                .map(WebElement::getText)
+                .collect(Collectors.toList());
+        assertThat(sectionHeaders, containsInAnyOrder("Titles", "Names", "Keywords", "Companies"));
     }
 }
