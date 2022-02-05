@@ -22,7 +22,7 @@ public class YouTubeResultsPageStepDefinitions {
 
     public YouTubeResultsPageStepDefinitions(WebDriverManager webDriverManager) {
         this.youTubeResultsPage = new YouTubeResultsPage(webDriverManager.getWebDriver());
-        this.webDriverWait = new WebDriverWait(webDriverManager.getWebDriver(), 5);
+        this.webDriverWait = new WebDriverWait(webDriverManager.getWebDriver(), 10);
     }
 
     @When("I click the {} filter")
