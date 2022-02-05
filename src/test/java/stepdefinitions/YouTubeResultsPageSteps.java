@@ -15,12 +15,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class YouTubeResultsPageStepDefinitions {
+public class YouTubeResultsPageSteps {
 
     private final YouTubeResultsPage youTubeResultsPage;
     private final WebDriverWait webDriverWait;
 
-    public YouTubeResultsPageStepDefinitions(WebDriverManager webDriverManager) {
+    public YouTubeResultsPageSteps(WebDriverManager webDriverManager) {
         this.youTubeResultsPage = new YouTubeResultsPage(webDriverManager.getWebDriver());
         this.webDriverWait = new WebDriverWait(webDriverManager.getWebDriver(), 10);
     }

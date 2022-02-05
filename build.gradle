@@ -26,8 +26,18 @@ configurations {
     }
 }
 
+//test {
+//    useTestNG()
+//}
+
 test {
-    useTestNG()
+    systemProperty "environment", System.getProperty("environment")
+    systemProperty "CUCUMBER_PUBLISH_TOKEN", System.getProperty("CUCUMBER_PUBLISH_TOKEN")
+    useTestNG() {
+        outputDirectory = file("$project.buildDir/testingOutput")
+        useDefaultListeners = true
+    }
+    reports.html.enabled = true
 }
 
 task cucumber {
@@ -38,6 +48,7 @@ task cucumber {
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [
                     '--plugin', 'pretty',
+                    '--plugin', 'testng',
                     '--plugin', 'html:target/cucumber-report.html',
                     '--plugin', 'json:target/cucumber.json',
                     '--glue', 'stepdefinitions',

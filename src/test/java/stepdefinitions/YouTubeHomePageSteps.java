@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.YouTubeHomePage;
 
-public class YouTubeHomePageStepDefinitions {
+public class YouTubeHomePageSteps {
 
     private final YouTubeHomePage youTubeHomePage;
     private final WebDriver webDriver;
     private final WebDriverWait webDriverWait;
 
-    public YouTubeHomePageStepDefinitions(WebDriverManager webDriverManager) {
+    public YouTubeHomePageSteps(WebDriverManager webDriverManager) {
         this.webDriver = webDriverManager.getWebDriver();
         this.youTubeHomePage = new YouTubeHomePage(webDriverManager.getWebDriver());
         this.webDriverWait = new WebDriverWait(webDriverManager.getWebDriver(), 5);
@@ -25,7 +25,7 @@ public class YouTubeHomePageStepDefinitions {
         webDriver.navigate().to("https://www.youtube.com");
     }
 
-    @And("I have searched for {}")
+    @And("I have searched for {} in the YouTube search bar")
     public void searchWithInput(String searchInput) {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(youTubeHomePage.SEARCH_INPUT));
         youTubeHomePage.SEARCH_INPUT.sendKeys(searchInput);
