@@ -13,10 +13,10 @@ repositories {
 
 dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
-    testImplementation 'io.cucumber:cucumber-java:6.10.4'
-    testImplementation 'io.cucumber:cucumber-junit:6.10.4'
+    implementation 'io.cucumber:cucumber-testng:7.2.3'
+    testImplementation 'io.cucumber:cucumber-java:7.2.3'
+    testImplementation 'io.cucumber:cucumber-junit:7.2.3'
     testImplementation group: 'io.cucumber', name: 'cucumber-picocontainer', version: '6.10.4'
-
     testCompile group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
 }
 
@@ -24,6 +24,20 @@ configurations {
     cucumberRuntime {
         extendsFrom testImplementation
     }
+}
+
+//test {
+//    useTestNG()
+//}
+
+test {
+    systemProperty "environment", System.getProperty("environment")
+    systemProperty "CUCUMBER_PUBLISH_TOKEN", System.getProperty("CUCUMBER_PUBLISH_TOKEN")
+    useTestNG() {
+        outputDirectory = file("$project.buildDir/testingOutput")
+        useDefaultListeners = true
+    }
+    reports.html.enabled = true
 }
 
 task cucumber {
@@ -34,6 +48,7 @@ task cucumber {
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [
                     '--plugin', 'pretty',
+                    '--plugin', 'testng',
                     '--plugin', 'html:target/cucumber-report.html',
                     '--plugin', 'json:target/cucumber.json',
                     '--glue', 'stepdefinitions',
