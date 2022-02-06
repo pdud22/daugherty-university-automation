@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.YouTubeHomePage;
 
+import java.time.Duration;
+
 public class YouTubeHomePageSteps {
 
     private final YouTubeHomePage youTubeHomePage;
@@ -17,7 +19,7 @@ public class YouTubeHomePageSteps {
     public YouTubeHomePageSteps(WebDriverManager webDriverManager) {
         this.webDriver = webDriverManager.getWebDriver();
         this.youTubeHomePage = new YouTubeHomePage(webDriverManager.getWebDriver());
-        this.webDriverWait = new WebDriverWait(webDriverManager.getWebDriver(), 5);
+        this.webDriverWait = new WebDriverWait(webDriverManager.getWebDriver(), Duration.ofSeconds(5));
     }
 
     @Given("I have navigated to YouTube")
@@ -29,6 +31,7 @@ public class YouTubeHomePageSteps {
     public void searchWithInput(String searchInput) {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(youTubeHomePage.SEARCH_INPUT));
         youTubeHomePage.SEARCH_INPUT.sendKeys(searchInput);
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(youTubeHomePage.searchButton));
         youTubeHomePage.searchButton.click();
     }
 }

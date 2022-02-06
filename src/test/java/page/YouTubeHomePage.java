@@ -20,7 +20,8 @@ public class YouTubeHomePage {
     public WebElement SEARCH_INPUT;
 //    public WebElement searchInput;
 
-    @FindBy(id = "search-icon-legacy")
+    @FindBy(xpath = "//button[@id='search-icon-legacy']/yt-icon")
+//    @FindBy(id = "search-icon-legacy")
     public WebElement searchButton;
 
     public YouTubeHomePage(WebDriver webDriver) {

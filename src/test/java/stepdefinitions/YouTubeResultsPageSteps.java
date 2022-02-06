@@ -4,11 +4,13 @@ import drivermanagement.WebDriverManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.YouTubeResultsPage;
 
+import java.time.Duration;
 import java.util.Objects;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -22,7 +24,7 @@ public class YouTubeResultsPageSteps {
 
     public YouTubeResultsPageSteps(WebDriverManager webDriverManager) {
         this.youTubeResultsPage = new YouTubeResultsPage(webDriverManager.getWebDriver());
-        this.webDriverWait = new WebDriverWait(webDriverManager.getWebDriver(), 10);
+        this.webDriverWait = new WebDriverWait(webDriverManager.getWebDriver(), Duration.ofSeconds(5));
     }
 
     @When("I click the {} filter")

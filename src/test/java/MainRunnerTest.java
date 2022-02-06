@@ -6,11 +6,11 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {
-                "pretty",
-                "html:target/cucumber-report.html",
-                "json:target/cucumber.json"
-        },
+//        plugin = {
+//                "pretty",
+//                "html:target/cucumber-report.html",
+//                "json:target/cucumber.json"
+//        },
         features = {"src/test/resources/features/"}
 )
 public class MainRunnerTest extends AbstractTestNGCucumberTests {
