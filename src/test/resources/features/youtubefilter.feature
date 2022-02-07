@@ -1,3 +1,4 @@
+@Test
 Feature: YouTube filter
 
   Scenario Outline: Filter by Upload Date
