@@ -13,22 +13,28 @@ repositories {
 
 dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.2'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.1.2'
     implementation 'io.cucumber:cucumber-testng:7.2.3'
     testImplementation 'io.cucumber:cucumber-java:7.2.3'
     testImplementation 'io.cucumber:cucumber-junit:7.2.3'
     testImplementation group: 'io.cucumber', name: 'cucumber-picocontainer', version: '7.2.3'
     testCompile group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+
+    // lombok
+    implementation('org.projectlombok:lombok:1.18.22')
+    annotationProcessor('org.projectlombok:lombok:1.18.22')
+    testAnnotationProcessor('org.projectlombok:lombok:1.18.22')
 }
 
 configurations {
-    cucumberRuntime {
-        extendsFrom testImplementation
+    TestNGOptions {
+        extendsFrom implementation
     }
+//    cucumberRuntime {
+//        extendsFrom testImplementation
+//    }
 }
 
-//test {
-//    useTestNG()
-//}
 
 test {
     systemProperty "environment", System.getProperty("environment")
@@ -40,19 +46,17 @@ test {
     reports.html.enabled = true
 }
 
-task cucumber {
-    dependsOn assemble, testClasses
-    doLast {
-        javaexec {
-            main = "io.cucumber.core.cli.Main"
-            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = [
-                    '--plugin', 'pretty',
-                    '--plugin', 'testng',
-                    '--plugin', 'html:target/cucumber-report.html',
-                    '--plugin', 'json:target/cucumber.json',
-                    '--glue', 'stepdefinitions',
-                    'src/test/resources']
-        }
-    }
-}
+//task cucumber {
+//    dependsOn assemble, testClasses
+//    doLast {
+//        javaexec {
+//            main = "io.cucumber.core.cli.Main"
+//            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+//            args = [
+//                    '--plugin', 'pretty',
+//                    '--plugin', 'testng',
+//                    '--glue', 'stepDefinitions',
+//                    'src/test/resources/features']
+//        }
+//    }
+//}
