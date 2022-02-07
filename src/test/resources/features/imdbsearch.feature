@@ -1,3 +1,4 @@
+@Test
 Feature: IMDB search
 
   Scenario Outline: Search for movies
@@ -19,7 +20,6 @@ Feature: IMDB search
     Examples:
       | searchInput         |
       | asdlkfhwelkrjhlkewa |
-
 
 #  Scenario Outline: Search for one movie's details
 #    Given I have navigated to IMDB
