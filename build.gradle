@@ -5,8 +5,6 @@ plugins {
 group 'org.softwaretestinghelp.gradle_selenium'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
@@ -32,10 +30,8 @@ configurations {
     }
 }
 
-
 test {
     systemProperty "environment", System.getProperty("environment")
-    systemProperty "CUCUMBER_PUBLISH_TOKEN", System.getProperty("CUCUMBER_PUBLISH_TOKEN")
     useTestNG() {
         outputDirectory = file("$project.buildDir/testingOutput")
         useDefaultListeners = true
