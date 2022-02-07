@@ -1,16 +1,17 @@
 package page;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class YouTubeHomePage {
 
-    @FindBy(id = "search")
-    public WebElement searchInput;
+    @FindBy(xpath = "//input[@id='search']")
+    public WebElement SEARCH_INPUT;
 
-    @FindBy(id = "search-icon-legacy")
+    @FindBy(xpath = "//button[@id='search-icon-legacy']/yt-icon")
+//    @FindBy(id = "search-icon-legacy")
     public WebElement searchButton;
 
     public YouTubeHomePage(WebDriver webDriver) {
