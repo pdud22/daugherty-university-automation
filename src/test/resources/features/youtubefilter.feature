@@ -1,3 +1,4 @@
+@Test
 Feature: YouTube filter
 
   Scenario Outline: Filter by Upload Date
@@ -11,4 +12,3 @@ Feature: YouTube filter
       | Mozart      | Last hour  | Hour     |
       | Mozart      | Today      | Day      |
       | Mozart      | This week  | Week     |
-
