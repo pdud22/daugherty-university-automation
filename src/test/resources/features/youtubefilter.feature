@@ -12,4 +12,3 @@ Feature: YouTube filter
       | Mozart      | Last hour  | Hour     |
       | Mozart      | Today      | Day      |
       | Mozart      | This week  | Week     |
-
