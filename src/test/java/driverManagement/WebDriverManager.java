@@ -13,7 +13,7 @@ public class WebDriverManager {
     public WebDriverManager() {
         String OS = System.getProperty("os.name");
         if (OS.startsWith("Windows")) {
-            System.setProperty("webdriver.chrome.driver", Paths.get("src/test/resources/chromedriver_win32/chromedriver98.exe").toString());
+            System.setProperty("webdriver.chrome.driver", Paths.get("src/test/resources/chromedriver_win32/chromedriver100.exe").toString());
         }
         this.webDriver = new ChromeDriver(new ChromeOptions());
     }
